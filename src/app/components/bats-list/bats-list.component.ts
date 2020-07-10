@@ -12,16 +12,22 @@ export class BatsListComponent implements OnInit {
   constructor(private _batService: BatService) { }
   
   bats: BatsModel[] = [];
-  
+  defaultImagePath = '/assets/img/';
+  isLoading =  true;
   ngOnInit(): void {
     this._batService.getBats().subscribe(
       (res: any[]) => {
         this.bats = res;
+        this.isLoading =  false;
       },
       (error: any) => {
         console.log(error);
+        this.isLoading =  false;
       }
     )
   }
 
+  getImageURL(url: string): string {
+    return `${this.defaultImagePath}${url}`;
+  }
 }

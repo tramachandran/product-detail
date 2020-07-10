@@ -1,0 +1,76 @@
+div.container {
+    display: flex;
+    flex-direction: column;
+    div.header {
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+    div.body {
+        margin-top: 1rem;;
+        display: flex;
+        flex-direction: row;
+        .image > img {
+            height: 70vh;
+            width: 25vw;
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 17px rgba(black, 0.35);
+            }
+        }
+        .details {
+            display: flex;
+            flex-direction: column;
+            margin: 0 2rem;
+            .description {
+                font-size: 1.25rem;
+            }
+            .money {
+                margin-top: 50vh;
+                font-size: 2rem;
+            }
+            .btn {
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: .25rem;
+                margin: 0 0.5rem;
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                    box-shadow: 0 4px 17px rgba(black, 0.35);
+                }
+                &.warning {
+                    color: #212529;
+                    background-color: #ffc107;
+                    border-color: #ffc107;
+                }
+                &.success {
+                    color: #fff;
+                    background-color: #28a745;
+                    border-color: #28a745;
+                }
+                &.disabled {
+                    color: #fff;
+                    background-color: #6c757d;
+                    border-color: #6c757d;
+                    cursor: default;
+                    transform: none;
+                    box-shadow: none;
+                }
+            }
+            
+            
+        }        
+    }
+}

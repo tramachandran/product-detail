@@ -4,5 +4,5 @@ export interface BatsModel {
     description: string,
     price: number;
     availability: string,
-    imageURL: string
+    imageUrl: string
 }
