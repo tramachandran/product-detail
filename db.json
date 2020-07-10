@@ -1,0 +1,44 @@
+{
+   "bats":[
+      {
+         "id":"44z7158u20i",
+         "name":"Bas-Blaster Bat",
+         "description":"A new bat from Bas company",
+         "price":399,
+         "availability":"A",
+         "imageUrl":"bas-blaster.jpg"
+      },
+      {
+         "id":"j4kh4o70cun",
+         "name":"Ceat-Hitman Bat",
+         "description":"A bat for next hitman",
+         "price":599,
+         "availability":"O",
+         "imageUrl":"ceat-hitman.png"
+      },
+      {
+         "id":"uio9kdx7lfc",
+         "name":"MRF Genius Bat",
+         "description":"A new bat from Bas company",
+         "price":459,
+         "availability":"A",
+         "imageUrl":"mrf-genius.jpg"
+      },
+      {
+         "id":"5zkrx0kogk4",
+         "name":"SG Tripple Bat",
+         "description":"Sg bat for juniors",
+         "price":649,
+         "availability":"O",
+         "imageUrl":"sg-tripple.jpg"
+      },
+      {
+         "id":"wvril29tosj",
+         "name":"SS Elite Bat",
+         "description":"An elite bat for an elite batsman",
+         "price":774,
+         "availability":"A",
+         "imageUrl":"ss-elite.jpg"
+      }
+   ]
+}

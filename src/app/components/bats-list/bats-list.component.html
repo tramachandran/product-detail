@@ -1,0 +1,13 @@
+<div class="card-container">
+    <div class="card" *ngFor="let bat of bats; let index = index;">
+        <div class="card-header">
+            {{bat.name}}
+        </div>
+        <div class="card-body">
+            {{bat.description}}
+        </div>
+        <div class="card-footer">
+            {{bat.price | currency: 'INR'}}
+        </div>
+    </div>
+</div>>
