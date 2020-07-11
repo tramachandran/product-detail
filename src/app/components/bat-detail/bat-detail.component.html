@@ -1,20 +1,25 @@
 <h3 *ngIf="isLoading">Hold on bat details are loading.....</h3>
 <div *ngIf="!isLoading" class="container">
-    <div class="header">
-        {{batDetails.name | uppercase }}
-    </div>
-    <div class="body">
-        <div class="image">
-            <img [src]="getImageURL()">
+    <ng-container *ngIf="!isErrorOccured; else errorTempl">
+        <div class="header">
+            {{batDetails.name | uppercase }}
         </div>
-        <div class="details">
-            <div class="description">{{batDetails.description}}</div>
-            <div>{{getAvailablityDetails()}}</div>
-            <div class="money">{{batDetails.price | currency:'INR'}}</div>
-            <div class="footer">
-                <button [class.disabled]="batDetails.availability === 'O'" [disabled]="batDetails.availability === 'O'" class="btn warning">Add To Cart</button>
-                <button [class.disabled]="batDetails.availability === 'O'" [disabled]="batDetails.availability === 'O'" class="btn success">Buy Now</button>
+        <div class="body">
+            <div class="image">
+                <img [src]="getImageURL()">
             </div>
-        </div>        
-    </div>    
+            <div class="details">
+                <div class="description">{{batDetails.description}}</div>
+                <div>{{getAvailablityDetails()}}</div>
+                <div class="money">{{batDetails.price | currency:'INR'}}</div>
+                <div class="footer">
+                    <button [class.disabled]="batDetails.availability === 'O'" [disabled]="batDetails.availability === 'O'" class="btn warning">Add To Cart</button>
+                    <button [class.disabled]="batDetails.availability === 'O'" [disabled]="batDetails.availability === 'O'" class="btn success">Buy Now</button>
+                </div>
+            </div>        
+        </div> 
+    </ng-container>
+    <ng-template #errorTempl>
+        Error occured while fetching the product details, please try again later.
+    </ng-template>
 </div>

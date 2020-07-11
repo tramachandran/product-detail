@@ -23,6 +23,7 @@ export class BatsListComponent implements OnInit {
       (error: any) => {
         console.log(error);
         this.isLoading =  false;
+        this.bats = [];
       }
     )
   }

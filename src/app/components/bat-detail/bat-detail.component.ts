@@ -14,6 +14,7 @@ export class BatDetailComponent implements OnInit {
   batDetails: BatsModel;
   defaultImagePath = '/assets/img/';
   isLoading = true;
+  isErrorOccured = false;
   ngOnInit(): void {
     this._route.params.subscribe((params) => {
       const id = params.id;
@@ -21,10 +22,12 @@ export class BatDetailComponent implements OnInit {
         (res: BatsModel) => {
           this.batDetails = res;
           this.isLoading =  false;
+          this.isErrorOccured = false
         },
         (err) => {
           console.log(err)
           this.isLoading = false;
+          this.isErrorOccured = true;
         }
       )
     });

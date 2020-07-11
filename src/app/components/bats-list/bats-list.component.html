@@ -1,17 +1,22 @@
 <h3 *ngIf="isLoading">Hold on, bat list is loading.....</h3>
 <div *ngIf="!isLoading" class="card-container">
-    <div [routerLink]="['../', bat.id]" class="card" *ngFor="let bat of bats; let index = index;">
-        <div class="card-header">
-            {{bat.name}}
-        </div>
-        <div class="card-body">
-            <div>{{bat.description}}</div>
-            <div class="logo">
-                <img [src]="getImageURL(bat.imageUrl)">
+    <ng-container *ngIf="bats.length > 0; else noDataTempl">
+        <div [routerLink]="['../', bat.id]" class="card" *ngFor="let bat of bats; let index = index;">
+            <div class="card-header">
+                {{bat.name}}
+            </div>
+            <div class="card-body">
+                <div>{{bat.description}}</div>
+                <div class="logo">
+                    <img [src]="getImageURL(bat.imageUrl)">
+                </div>
+            </div>
+            <div class="card-footer">
+                {{bat.price | currency: 'INR'}}
             </div>
         </div>
-        <div class="card-footer">
-            {{bat.price | currency: 'INR'}}
-        </div>
-    </div>
+    </ng-container>
+    <ng-template #noDataTempl>
+        No products available.
+    </ng-template>
 </div>
